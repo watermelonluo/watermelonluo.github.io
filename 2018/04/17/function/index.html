@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="function,this,closure,constructor," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="作用域作用域是一种规则，在代码编译阶段就确定了，规定了变量与函数的可被访问的范围。全局变量拥有全局作用域，局部变量则拥有局部作用域。 js是一种没有块级作用域的语言(包括if、for等语句的花括号代码块或者单独的花括号代码块都不能形成一个局部作用域)，所以js的局部作用域的形成有且只有函数的花括号内定义的代码块形成的，既函数作用域。 作用域链作用域链是一个只能单向访问的链表，这个链表上的每个节点就">
+<meta name="keywords" content="function,this,closure,constructor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数">
+<meta property="og:url" content="https://watermelonluo.github.io/2018/04/17/function/index.html">
+<meta property="og:site_name" content="watermelon">
+<meta property="og:description" content="作用域作用域是一种规则，在代码编译阶段就确定了，规定了变量与函数的可被访问的范围。全局变量拥有全局作用域，局部变量则拥有局部作用域。 js是一种没有块级作用域的语言(包括if、for等语句的花括号代码块或者单独的花括号代码块都不能形成一个局部作用域)，所以js的局部作用域的形成有且只有函数的花括号内定义的代码块形成的，既函数作用域。 作用域链作用域链是一个只能单向访问的链表，这个链表上的每个节点就">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-17T12:42:56.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数">
+<meta name="twitter:description" content="作用域作用域是一种规则，在代码编译阶段就确定了，规定了变量与函数的可被访问的范围。全局变量拥有全局作用域，局部变量则拥有局部作用域。 js是一种没有块级作用域的语言(包括if、for等语句的花括号代码块或者单独的花括号代码块都不能形成一个局部作用域)，所以js的局部作用域的形成有且只有函数的花括号内定义的代码块形成的，既函数作用域。 作用域链作用域链是一个只能单向访问的链表，这个链表上的每个节点就">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://watermelonluo.github.io/2018/04/17/function/"/>
+
+
+
+
+
+  <title>函数 | watermelon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/watermelonluo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">watermelon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">函数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:26:19+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><font color="e5004f" size="5"><strong>作用域</strong></font><br>作用域是一种规则，在代码编译阶段就确定了，规定了变量与函数的可被访问的范围。全局变量拥有全局作用域，局部变量则拥有局部作用域。 js是一种没有块级作用域的语言(包括if、for等语句的花括号代码块或者单独的花括号代码块都不能形成一个局部作用域)，所以js的局部作用域的形成有且只有函数的花括号内定义的代码块形成的，既函数作用域。</p>
+<p><font color="e5004f" size="5"><strong>作用域链</strong></font><br>作用域链是一个只能单向访问的链表，这个链表上的每个节点就是执行上下文的变量对象(代码执行时就是活动对象)，单向链表的头部(可被第一个访问的节点)始终都是当前正在被调用执行的函数的变量对象(活动对象)，尾部始终是全局活动对象<br>作用域链的形成<br>function fun01 () {<br>    console.log(‘i am fun01…’);<br>    fun02();<br>}</p>
+<p>function fun02 () {<br>    console.log(‘i am fun02…’);<br>}</p>
+<p>fun01();<br>因为如果在当前节点没有找到变量，就跳到下一个节点查找，还要进行判断下一个节点中是否存在被查找变量。“查找距离”越长，要做的“跳”动作和“判断”动作也就越多，资源开销就越大，从而影响性能</p>
+<p><font color="e5004f" size="5"><strong>关于闭包</strong></font><br>函数对象可以通过作用域链相互关联起来，函数体内的数据(变量和函数声明)都可以保存在函数作用域内，这种特性在计算机科学文献中被称为“闭包”。既函数体内的数据被隐藏于作用于链内，看起来像是函数将数据“包裹”了起来。从技术角度来说，js的函数都是闭包：函数都是对象，都关联到作用域链，函数内数据都被保存在函数作用域内。<br>//闭包实例<br>function outerFun () {<br>    var outerV1 = 10<br>    function outerF1 () {<br>        console.log(‘I am outerF1…’)<br>    }<br>function innerFun () {<br>        var innerV1 = outerV1<br>        outerF1()<br>    }<br>    return innerFun   //return回innerFun()内部函数<br>}<br>var fn = outerFun()        //接到return回的innerFun()函数<br>fn()                    //执行接到的内部函数innerFun()</p>
+<p><font color="e5004f" size="5"><strong>闭包的好处及使用场景</strong></font><br>如果当前执行上下文执行完毕，且上下文内的数据没有其他引用，则执行上下文pop出call stack，其内数据等待被垃圾回收。而当我们在其他执行上下文通过闭包对执行完的上下文内数据仍然进行引用时，那么被引用的数据则不会被垃圾回收。<br>(1)进行变量持久化。<br>(2)使函数对象内有更好的封装性，内部数据私有化。</p>
+<p><font color="e5004f" size="5"><strong>JS中this的四种用法</strong></font><br>1.在一般函数方法中使用 this 指代全局对象<br>            function test(){<br>            　　this.x = 1;<br>            　　alert(this.x);<br>            }<br>            test(); // 1<br>2.作为对象方法调用，this 指代上级对象<br>function test(){<br>　　alert(this.x);<br>}<br>var o = {};<br>o.x = 1;<br>o.m = test;<br>o.m(); // 1<br>3.作为构造函数调用，this 指代new 出的对象<br>function test(){<br>　　　　this.x = 1;<br>　　}<br>　　var o = new test();<br>　　alert(o.x); // 1<br>    //运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：<br>　　var x = 2;<br>　　function test(){<br>　　　　this.x = 1;<br>　　}<br>　　var o = new test();<br>　　alert(x); //2<br>　　4.apply 调用 ，apply方法作用是改变函数的调用对象，此方法的第一个参数为改变后调用这个函数的对象，this指代第一个参数<br>　　var x = 0;<br>　　function test(){<br>　　　　alert(this.x);<br>　　}<br>　　var o={};<br>　　o.x = 1;<br>　　o.m = test;<br>　　o.m.apply(); //0<br>//apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。如果把最后一行代码修改为</p>
+<p>　　o.m.apply(o); //1</p>
+<p><font color="e5004f" size="5"><strong>函数定义</strong></font><br>1.函数声明<br>使用function关键字，后跟一组参数以及函数体<br>function funcname([arg1 [,arg2 […,argn]]]){<br>    statement;<br>}<br>函数声明提升，函数名称和函数体都提升：<br>foo();<br>function foo(){<br>    console.log(1);//1<br>}<br>变量的重复声明是无用的，但函数的重复声明会覆盖前面的声明(无论是变量还是函数声明)<br>//变量的重复声明无用<br>var a = 1;<br>var a;<br>console.log(a);//1<br>//由于函数声明提升优先于变量声明提升，所以变量的声明无作用<br>var a;<br>function a(){<br>    console.log(1);<br>}<br>a();//1<br>//后面的函数声明会覆盖前面的函数声明<br>a();//2<br>function a(){<br>    console.log(1);<br>}<br>function a(){<br>    console.log(2);<br>}<br>和变量声明一样，函数声明语句创建的变量无法删除<br>function foo(){<br>    console.log(1);<br>}<br>delete foo;//false<br>console.log(foo());//1<br>2.函数定义表达式<br>以表达式方式定义的函数，函数的名称是可选的，函数定义表达式特别适合用来定义那些只会使用一次的函数<br>var functionName = function([arg1 [,arg2 […,argn]]]){<br>    statement;<br>}<br>3.Function构造函数<br>Function构造函数接收任意数量的参数，但最后一个参数始终都被看成是函数体，而前面的参数则枚举出了新函数的参数<br>var functionName = new Function([‘arg1’ [,’arg2’ […,’argn’]]],’statement;’);<br>Function构造函数无法指定函数名称，它创建的是一个匿名函数<br>并不是所有的函数都可以成为构造函数<br>var o = new Math.min();//Uncaught TypeError: Math.min is not a constructor</p>
+<p><font color="e5004f" size="5"><strong>函数返回值</strong></font><br>函数中的return语句用来返回函数调用后的返回值<br>return语句只能出现在函数体内，如果不是会报语法错误<br>如果没有return语句，则函数调用仅仅依次执行函数体内的每一条语句直到函数结束，最后返回调用程序。这种情况下，调用表达式的结果是undefined<br>var test = function fn(){}<br>console.log(test());//undefined<br>当执行到return语句时，函数终止执行，并返回expression的值给调用程序<br>var test = function fn(){<br>    return 2;<br>};<br>console.log(test());//2<br>由于javascript可以自动插入分号，因此在return关键字和它后面的表达式之间不能有换行<br>var test = function fn(){<br>    return<br>    2;<br>};<br>console.log(test());//undefined<br>一个函数中可以有多个return语句<br>function diff(iNum1, iNum2) {<br>  if (iNum1 &gt; iNum2) {<br>    return iNum1 - iNum2;<br>  } else {<br>    return iNum2 - iNum1;<br>  }<br>}</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/function/" rel="tag"># function</a>
+          
+            <a href="/tags/this/" rel="tag"># this</a>
+          
+            <a href="/tags/closure/" rel="tag"># closure</a>
+          
+            <a href="/tags/constructor/" rel="tag"># constructor</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/es6-object/" rel="next" title="ES5/ES6对象、面向对象、继承">
+                <i class="fa fa-chevron-left"></i> ES5/ES6对象、面向对象、继承
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/17/ajax/" rel="prev" title="Ajax">
+                Ajax <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="watermelonluo" />
+            
+              <p class="site-author-name" itemprop="name">watermelonluo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">watermelonluo</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash;  v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+</body>
+</html>
+<script type='text/javascript' src='/js/src/love.js'></script>

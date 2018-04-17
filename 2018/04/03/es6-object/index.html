@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="es6,object," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ES6中的对象在ES6中，将对象的语法也简洁了单体模式的对象：以前是用json的方法：var person={name:’小明’,age:21,showName:function(){alert(this.name);},showAge:function(){alert(this.age);}}person.showName();person.showAge(); ES6将其简化了：var nam">
+<meta name="keywords" content="es6,object">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES5&#x2F;ES6对象、面向对象、继承">
+<meta property="og:url" content="https://watermelonluo.github.io/2018/04/03/es6-object/index.html">
+<meta property="og:site_name" content="watermelon">
+<meta property="og:description" content="ES6中的对象在ES6中，将对象的语法也简洁了单体模式的对象：以前是用json的方法：var person={name:’小明’,age:21,showName:function(){alert(this.name);},showAge:function(){alert(this.age);}}person.showName();person.showAge(); ES6将其简化了：var nam">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-16T13:08:38.038Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES5&#x2F;ES6对象、面向对象、继承">
+<meta name="twitter:description" content="ES6中的对象在ES6中，将对象的语法也简洁了单体模式的对象：以前是用json的方法：var person={name:’小明’,age:21,showName:function(){alert(this.name);},showAge:function(){alert(this.age);}}person.showName();person.showAge(); ES6将其简化了：var nam">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://watermelonluo.github.io/2018/04/03/es6-object/"/>
+
+
+
+
+
+  <title>ES5/ES6对象、面向对象、继承 | watermelon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/watermelonluo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">watermelon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/03/es6-object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES5/ES6对象、面向对象、继承</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-03T22:17:19+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><font color="e5004f" size="5"><strong>ES6中的对象</strong></font><br>在ES6中，将对象的语法也简洁了<br>单体模式的对象：<br>以前是用json的方法：<br>var person={<br>name:’小明’,<br>age:21,<br>showName:function(){<br>alert(this.name);<br>},<br>showAge:function(){<br>alert(this.age);<br>}<br>}<br>person.showName();<br>person.showAge();</p>
+<p>ES6将其简化了：<br>var name=’小明’;<br>var age=16;<br>var person={<br>name,<br>age,<br>showName(){<br>alert(this.name);<br>},<br>showAge(){<br>alert(this.age);<br>}<br>}<br>person.showName();<br>person.showAge();</p>
+<hr>
+<p>补充：函数参数给默认值：<br>function move(obj,json,options){<br>console.log(options)<br>}<br>move(); //会报错，函数move需要传参，在调用函数时，并没有给函数传实参，就会报错<br>解决上面的问题，防止报错，我们可以给函数的参数传默认值<br>function move(obj=’参数必须要写’,json={},options={}){<br>console.log(obj);<br>console.log(options);<br>}<br>move(); //这里因为给函数的参数传了默认值，所以就不会报错</p>
+<hr>
+<p><font color="e5004f" size="5"><strong>面向对象</strong></font><br>1）之前面向对象的方法<br>function Person(name,age){ 类，构造函数<br>//为对象添加属性<br>this.name=name;<br>this.age=age;<br>}<br>//为对象添加方法<br>Person.prototype.showName=function(){<br>alert(this.name);<br>}<br>Person.prototype.showAge=function(){<br>alert(this.age);<br>}<br>var p1=new Person(‘aaa’,21);<br>p1.showAge(); //21</p>
+<p>2）ES6面向对象的方法：<br>类：class<br>构造函数：constructor 指生成完实例以后，自己就执行的函数</p>
+<p>//面向对象<br>class Person{ //类<br>//为对象添加属性<br>constructor(name=’default’,age=0){ //给参数传默认值，防止调用时忘记传实参而报错<br>this.name=name;<br>this.age=age;<br>}<br>//为对象添加方法<br>showName(){<br>alert(this.name);<br>}<br>showAge(){<br>alert(this.age);<br>}<br>}<br>var person1=new Person(‘小明’,12);<br>var person2=new Person(‘小李’,51);<br>alert(person1.name); //小明<br>person1.showAge(); //12<br>person2.showName(); //小李<br>alert(person1.showAge==person2.showAge); //true<br>alert(person1.constructor==Person); //true</p>
+<hr>
+<p><font color="e5004f" size="5"><strong>面向对象的继承</strong></font><br>1）之前面向对象的继承<br>function Person(name,age){ //类，构造函数<br>//为对象添加属性<br>this.name=name;<br>this.age=age;<br>}<br>//为对象添加方法<br>Person.prototype.showName=function(){<br>alert(this.name);<br>}<br>Person.prototype.showAge=function(){<br>alert(this.age);<br>}</p>
+<p>//Work继承Person<br>function Work(name,age){<br>Person.apply(this,arguments); //子类继承父类的属性<br>}<br>Work.prototype=new Person(); //子类继承父类的方法<br>var p1=new Person(‘aaa’,21);<br>var w1=new Work(‘bbb’,54);<br>p1.showAge(); //21<br>w1.showName(); //bbb</p>
+<p>2）ES6中面向对象的继承<br>特点:将继承的语法简化<br>//面向对象<br>class Person{<br>//为对象添加属性<br>constructor(name=’default’,age=0){<br>this.name=name;<br>this.age=age;<br>}<br>//为对象添加方法<br>showName(){<br>alert(this.name);<br>}<br>showAge(){<br>alert(this.age);<br>}<br>}<br>//继承<br>class Worker extends Person{ //这里即可实现子类的继承<br>//继承之后，添加子类特有的属性<br>constructor(name,age,job){<br>super(name,age); //使用super()将父类的属性继承过来，同时添加子类自己的新属性。如果不加，这个constructor将会把从父类继承的constructor中的属性和方法覆盖，从而使子类没有继承name,age属性，而报错<br>this.job=job;<br>}<br>//继承之后，添加子类特有的方法<br>showJob(){<br>alert(this.job);<br>}<br>}<br>var person1=new Person(‘小明’,12);<br>var person2=new Person(‘小李’,51);<br>var woker=new Worker(‘子类’,32,’WEB工程师’);<br>alert(person1.name);<br>person1.showAge();<br>person2.showName();<br>alert(person1.showAge==person2.showAge); //true<br>woker.showName(); //子类<br>woker.showAge();<br>woker.showJob();</p>
+<hr>
+<p><font color="e5004f" size="5"><strong>面向对象和继承的小应用</strong></font><br>1)队列的增加与删除<br>class Queue{<br>constructor(content){<br>this._queue=[…content];<br>}<br>shift(){<br>return this._queue.shift();<br>}<br>push(value){<br>this._queue.push(value);<br>return this._queue.length;<br>}<br>}<br>var q1=new Queue([1,2,3,4]);<br>var q2=new Queue([5,6,7,8]);<br>q1.shift();<br>q2.push(9);<br>console.log(q1._queue);<br>console.log(q2._queue);</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/es6/" rel="tag"># es6</a>
+          
+            <a href="/tags/object/" rel="tag"># object</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/17/function/" rel="prev" title="函数">
+                函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="watermelonluo" />
+            
+              <p class="site-author-name" itemprop="name">watermelonluo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">watermelonluo</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash;  v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+</body>
+</html>
+<script type='text/javascript' src='/js/src/love.js'></script>

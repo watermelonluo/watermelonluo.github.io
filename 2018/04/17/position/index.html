@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css3," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Positionstatic    默认值，不定位relative    相对定位只加相对定位，不设置元素移动的位置(top, bottom, left, right值)，元素和之前是没有变化根据自己原来的位置计算移动的位置不脱离文档流，元素移走以后，原来的位置还会被保留加上相对定位后对原来的元素本身的特征没有影响提升层级absolute    绝对定位完全脱离文档流行内元素支持所有样式（与加上浮">
+<meta name="keywords" content="css3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="position(定位)">
+<meta property="og:url" content="https://watermelonluo.github.io/2018/04/17/position/index.html">
+<meta property="og:site_name" content="watermelon">
+<meta property="og:description" content="Positionstatic    默认值，不定位relative    相对定位只加相对定位，不设置元素移动的位置(top, bottom, left, right值)，元素和之前是没有变化根据自己原来的位置计算移动的位置不脱离文档流，元素移走以后，原来的位置还会被保留加上相对定位后对原来的元素本身的特征没有影响提升层级absolute    绝对定位完全脱离文档流行内元素支持所有样式（与加上浮">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-17T12:43:29.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="position(定位)">
+<meta name="twitter:description" content="Positionstatic    默认值，不定位relative    相对定位只加相对定位，不设置元素移动的位置(top, bottom, left, right值)，元素和之前是没有变化根据自己原来的位置计算移动的位置不脱离文档流，元素移走以后，原来的位置还会被保留加上相对定位后对原来的元素本身的特征没有影响提升层级absolute    绝对定位完全脱离文档流行内元素支持所有样式（与加上浮">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://watermelonluo.github.io/2018/04/17/position/"/>
+
+
+
+
+
+  <title>position(定位) | watermelon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/watermelonluo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">watermelon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/position/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">position(定位)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:36:38+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><font color="e5004f" size="6"><strong>Position</strong></font><br>static    默认值，不定位<br>relative    相对定位<br>只加相对定位，不设置元素移动的位置(top, bottom, left, right值)，元素和之前是没有变化<br>根据自己原来的位置计算移动的位置<br>不脱离文档流，元素移走以后，原来的位置还会被保留<br>加上相对定位后对原来的元素本身的特征没有影响<br>提升层级<br>absolute    绝对定位<br>完全脱离文档流<br>行内元素支持所有样式（与加上浮动或者inline-block以后的效果是一样的）<br>如果父级有定位，那位置会根据父级移动。如果父级没有定位，那位置根据可视区移动。(一般情况下，要用到绝对定位的时候，都会给父级来一个相对定位, 子元素绝对定位, 父元素相对定位)<br>提升层级<br>触发BFC<br>fixed    固定定位<br>完全脱离文档流<br>行内元素支持所有样式（与加上浮动或者inline-block以后的效果是一样的）<br>相对可视区来移动位置<br>提升层级<br>触发BFC<br>IE6不支持</p>
+<p><font color="e5004f" size="6"><strong>z-index</strong></font><br>在正常情况下，层级的大小由顺序决定，后面的元素要比前面的元素的层级要高<br>有定位元素的层级要比没有定位元素层级要高<br>在都有定位的情况下，层级还是取决于书写顺序<br>z-index    层级，它的值是一个数字，数字越大层级越高（在同一个层里）<br>IE6不支持</p>
+<p><font color="e5004f" size="6"><strong>居中</strong></font><br>需要注意的是, 以下例子中parent的宽高, 可以通过上下文确定或者手动指定。</p>
+<p>水平居中<br>margin: 0 auto</p>
+<p>用在子元素上的<br>如果它是行内元素, 需要把它转成块元素display:block(行内元素没margin效果)<br>text-align: center</p>
+<p>用在父元素上的<br>子元素不能是行内元素, 需要是块元素或行内块元素。<br>水平垂直居中<br>经典方法, 绝对定位加上子元素的宽高一半的负边距。</p>
+<p>用在子元素上的<br>需要知道子元素的宽高</p>
+<p>.parent{<br>    position: relative;<br>}</p>
+<p>.children{<br>    position: absolute;<br>    width: 100px;<br>    height: 150px;<br>    top: 50%;<br>    width: 50%;<br>    margin-top: -75px; /<em> 高的一半 </em>/<br>    margin-left: -50px; /<em> 宽的一半 </em>/<br>}<br>经典方法: margin: auto</p>
+<p>用在子元素上的<br>不用受子元素宽高限制</p>
+<p>.parent{<br>        position: relative;<br>    }</p>
+<p> .children{<br>        position: absolute;<br>        top: 0;<br>        right: 0;<br>        left: 0;<br>        bottom: 0;<br>        margin: auto;<br>    }</p>
+<p>绝对定位和transform</p>
+<p>用在子元素上的<br>使用了transform方法, 如果支持CSS3的话, 在性能上有优势。</p>
+<p>   .parent{<br>        position: relative;<br>    }</p>
+<p> .children{<br>        position: absolute;<br>        width: 100px;<br>        height: 150px;<br>        top: 50%;<br>        left: 50%;<br>        transform: translate(-50%, -50%);<br>    }</p>
+<p>display: table-cell</p>
+<p>用在父元素上的<br>让父元素变成表格, 再用表格的样式居中。</p>
+<p> .parent{<br>        display: table-cell;<br>        vertical-align: middle;<br>        text-align: center;<br>        width: 300px;<br>        height: 300px;<br>    }</p>
+<p> .children{</p>
+<p> width: 100px;<br>        height: 150px;<br>    }</p>
+<p>CSS3新特性 flexbox</p>
+<p>用在父元素身上<br>PC有兼容问题, 移动端完美<br>未来的方法<br>.parent{<br>        display: flex;<br>        justify-content: center;<br>        align-items: center;<br>        width: 300px;<br>        height: 300px;<br>    }</p>
+<p>.children{<br>        width: 100px;<br>        height: 150px;<br>    }</p>
+<p>利用vertical-align: middle</p>
+<p>需要有一个块参照元素(如下面的.refer)<br>父元素需要使用font-size: 0消去子元素间产生的间隙<br>子元素宽高不需要确定<br>        .parent{<br>            text-align:center;<br>            font-size: 0;<br>        }</p>
+<p> .refer{<br>            width: 0;<br>            height: 100%;<br>            vertical-align: middle;<br>            display: inline-block;<br>        }</p>
+<p> .children{<br>            display: inline-block;<br>            vertical-align: middle;<br>            font-size: 14px;<br>            text-align: left;<br>        }</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=“refer”&gt;&lt;/div&gt;
+    &lt;div class=“children”&gt;需要内容撑开&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css3/" rel="tag"># css3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/17/date-object/" rel="next" title="Date object">
+                <i class="fa fa-chevron-left"></i> Date object
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/17/mobile/" rel="prev" title="移动端事件">
+                移动端事件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="watermelonluo" />
+            
+              <p class="site-author-name" itemprop="name">watermelonluo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">watermelonluo</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash;  v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+</body>
+</html>
+<script type='text/javascript' src='/js/src/love.js'></script>

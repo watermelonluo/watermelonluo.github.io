@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="watermelon">
+<meta property="og:url" content="https://watermelonluo.github.io/index.html">
+<meta property="og:site_name" content="watermelon">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="watermelon">
 
 
 
@@ -115,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="https://watermelonluo.github.io/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>watermelon</title>
   
 
 
@@ -153,7 +153,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">watermelon</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -240,16 +240,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/dom-bom/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="watermelonluo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="watermelon">
     </span>
 
     
@@ -259,7 +259,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/16/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2018/04/17/dom-bom/" itemprop="url">DOM/BOM</a></h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T22:36:34+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:40:06+08:00">
+                2018-04-17
               </time>
             
 
@@ -311,15 +311,1343 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p><font color="e5004f" size="5"><strong>DOM 文档对象模型</strong></font><br>attributes: 属性节点<br>nodeName: 节点名称<br>nodeType: 节点类型<br>标签 1 - 有tagName<br>属性 2<br>文本 3<br>注释 8<br>文档 9</p>
+<p><font color="e5004f" size="5"><strong>使用JS操作DOM</strong></font><br>parentNode, childNodes, previousElementSibling, nextElementSibling, firstElementChild, lastElementChild,<br>children 所有子元素集合<br>offsetParent 距离最近的有定位的父级(不为static)<br>offsetLeft, offsetTop: 没有单位, 不带边框, 父级有定位, 清掉默认样式。<br>getBoundingClientRect: 没有单位, 不包含滚动条<br>width    宽度(包含边框)<br>height    高度(包含边框)<br>left    从元素的最左边到可视区的最左边距离<br>right    从元素的最右边到可视区的最左边的距离<br>top    从元素的最上边到可视区的最上边的距离<br>bottom    从元素的最下边到可视区的最上边的距离<br>元素宽高<br>元素.offsetWidth<br>元素.clientWidth // 不含边框<br>元素.offsetHeight<br>元素.clientHeight // 不含边框<br>getAttribute(属性名), box.属性, box[&#39;属性名&#39;]。<br>setAttribute(attr,value);<br>removeAttribute(attr);<br>节点<br>createElement(tagName);<br>appenChild(child);<br>insertBefore();<br>removeChild();<br>replaceChild();<br>要克隆的节点.cloneNode(boolean)<br>true 包含子节点, false 不包含子节点<br>不能克隆元素上绑定的js<br>动态和静态获取元素问题<br>getElementsByTagName(TagName) 动态获取, 原来元素有变化会重新监听。<br>querySelectorAll 只获取一次。<br>DOM操作表单<br>值 value, input, select, textarea<br>用name属性获取元素<br>selectedIndex 下拉框索引<br>oninput 监听输入<br>onchange 下拉框内容有变化触发<br>onsubmit 点击按钮提交<br>onreset 表单重置触发</p>
+<p><font color="e5004f" size="5"><strong>BOM 浏览器对象模型</strong></font><br>window.open() 打开窗口<br>window.close() 关闭窗口, 只能关闭window.open打开的窗口<br>window.navigator.userAgent 用户浏览器, 操作系统等信息<br>window.location 地址栏信息<br>window.location.search 地址栏查询信息<br>window.location.hash 锚点信息<br>window.innerWidth/window.innerHeight 不兼容低版本浏览器<br>window.pageXOffset, window.pageYOffset 滚动条距离<br>window.scrollTop(x,y) 参数都出现<br>scrollHeight 被内容撑开的高度, 内容没有外层高就是外层的高度。<br>window.onscroll 滚动条滚动时触发<br>window.onresize 窗口改变大小时触发</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/js-design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/js-design/" itemprop="url">js设计模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:39:13+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font color="e5004f" size="5"><strong>常见的JavaScript设计模式</strong></font><br>使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性<br><strong>构造函数模式</strong><br>function Person(name, age){<br>    this.name = name;<br>    this.age = age;<br>    this.getAge = function(){<br>        return this.age;<br>    }<br>}<br>var p1= new Person(‘xiaoming’, ‘21’);<br>console.log(p1.getAge() );<br><strong>单例模式</strong><br>单例模式定义了一个对象的创建过程，此对象只有一个单独的实例，并提供一个访问它的全局访问点。也可以说单例就是保证一个类只有一个实例，实现的方法一般是先判断实例存在与否，如果存在直接返回，如果不存在就创建了再返回，这就确保了一个类只有一个实例对象</p>
+<p>var Single = (function(){<br>    var instance;<br>    function init() {<br>        //define private methods and properties<br>        //do something<br>        return {<br>            //define public methods and properties<br>        };<br>    }<br>    return {<br>        // 获取实例<br>        getInstance:function(){<br>            if(!instance){<br>                instance = init();<br>            }<br>            return instance;<br>        }<br>    }<br>})();<br>var obj1 = Single.getInstance();<br>var obj2 = Single.getInstance();<br>console.log(obj1 === obj2);<br><strong>工厂模式</strong><br>工厂模式的定义：提供创建对象的接口，意思就是根据领导（调用者）的指示（参数），生产相应的产品（对象）。<br> 创建一个对象常常需要复杂的过程，所以不适合在一个复杂的对象中。<br>创建对象可能会导致大量的重复代码，也可能提供不了足够级别的抽象。<br> 工厂就是把成员对象的创建工作转交给一个外部对象，好处在于消除对象之间的耦合(也就是相互影响)<br> function Person(opts){<br>    var obj = new Object();<br>    obj.name = opts.name;<br>    obj.age = opts.age;<br>    obj.getInfo = function(){<br>        return ‘名称：’+obj.name +’， 年龄：’+ obj.age;<br>    }<br>    return obj;<br>}<br>var child= Person({name: ‘xiaobao’, age: ‘7’});<br>child.getInfo();</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/mobile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/mobile/" itemprop="url">移动端事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:38:09+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <font color="e5004f" size="5"><strong>移动端基础事件</strong></font><br>touchstart            手指按下事件<br>touchmove            手指移动事件<br>touchend                手指离开事件<br><br>var box=document.getElementById(“box”);<br>document.addEventListener(‘touchstart’,function(ev){<br>ev.preventDefault();<br>            });<br>            //相当于mousedown<br>            box.addEventListener(‘touchstart’,function(){<br>                this.innerHTML=’手指按下了’;<br>            });<br>            //相当于mousemove<br>            box.addEventListener(‘touchmove’,function(){<br>                this.innerHTML=’手指移动了’;<br>            });<br>     注意：<br>             <em>         1、这些事件只能用事件监听函数来添加，不能用on添加
+             </em>         2、移动端当中就不要再用鼠标的事件了<br>             <em>         3、移动端的事件会触发浏览器的默认行为，所以在调用事件的时候要把这个默认行为给阻止了<br><br><font color="e5004f" size="5"><strong>事件对象</strong></font><br>touches            当前屏幕中的手指列表<br>var box=document.getElementById(“box”);<br>            //相当于mousedown<br>            box.addEventListener(‘touchstart’,function(ev){<br>                //console.log(ev.touches);<br>                this.innerHTML=ev.touches.length;<br>            });<br><br><font color="e5004f" size="5"><strong>重力加速度事件</strong></font><br> devicemotion                        重力加速度事件
+             </em> accelerationIncludingGravity        重力加速度对象<br>             <em>         他身上有三个轴
+             </em>             x:手机的宽<br>             <em>             y:手机的长
+             </em>             z:手机的厚<br>             <em> 
+             </em> 注意：这个事件只能放在window身上<br>    var box=document.getElementById(“box”);<br>            //相当于mousedown<br>            window.addEventListener(‘devicemotion’,function(ev){<br>                var motion=ev.accelerationIncludingGravity;<br>                //console.log(ev.touches);<br>                this.innerHTML=x:${motion.x}<br>y:${motion.y}<br>z:${motion.z};<br>            });<br><br><font color="e5004f" size="5"><strong>方块跟着重力移动</strong></font>
+
+<pre><code> * devicemotion                        重力加速度事件
+ * accelerationIncludingGravity        重力加速度对象
+ *         他身上有三个轴
+ *             x:手机的宽
+ *             y:手机的长
+ *             z:手机的厚
+ * 
+ * 注意：这个事件只能放在window身上
+
+var box=document.getElementById(&quot;box&quot;);
+//相当于mousedown            window.addEventListener(&apos;devicemotion&apos;,function(ev){
+    var motion=ev.accelerationIncludingGravity;
+    //console.log(ev.touches);
+    var x=parseFloat(getComputedStyle(box).left);
+    box.style.left=x+motion.x+&apos;px&apos;;
+});
+</code></pre><font color="e5004f" size="5"><strong>手机倾斜事件</strong></font>
+
+<pre><code> * deviceorientation            手机倾斜事件
+ *         ev.beta                    x轴的倾斜
+ *         ev.gamma                y轴的倾斜
+ *         ev.alpha                z轴的倾斜
+ * 
+ * 注意：这个事件只能放在window身上
+
+var box=document.getElementById(&quot;box&quot;);        
+//相当于mousedown            window.addEventListener(&apos;deviceorientation&apos;,function(ev){
+    var motion=ev.accelerationIncludingGravity;
+    //console.log(ev.touches);
+    box.innerHTML=`x轴倾斜:${ev.beta.toFixed(1)}&lt;/br&gt;y轴倾斜:${ev.gamma.toFixed(1)}&lt;/br&gt;z轴倾斜:${ev.alpha.toFixed(1)}`;
+});
+</code></pre><p><font color="e5004f" size="5"><strong>摇一摇</strong></font><br>var lastRange=0;        //上一次摇晃的幅度<br>            var isShake=false;        //决定用户到底有没有大幅度摇晃                    window.addEventListener(‘devicemotion’,function(ev){<br>                var motion=ev.accelerationIncludingGravity;<br>                var x=Math.abs(motion.x);<br>                var y=Math.abs(motion.y);<br>                var z=Math.abs(motion.z);<br>                var range=x+y+z;            //当前摇晃的幅度<br>                if(range-lastRange&gt;100){<br>                    //这个条件成立说明用户现在已经在大幅度摇晃<br>                    isShake=true;<br>                }<br>                if(isShake &amp;&amp; range&lt;50){<br>                    //这个条件成立，说明用户摇晃的幅度很小了就要停了<br>                    alert(‘摇一摇了’);<br>                    isShake=false;<br>                }<br>            });</p>
+<p><font color="e5004f" size="5"><strong>多指旋转</strong></font></p>
+<pre><code> * gesturestart                两个或者两个以上手指按下
+ * gesturechange            两个或者两个以上手指变换
+ * gestureend                两个或者两个以上手指离开
+ * 
+ * ev.rotation                这个值是start与move的旋转度数的差值
+//一定要阻止浏览器的默认行为            document.addEventListener(&apos;touchstart&apos;,function(ev){
+    ev.preventDefault();
+});            document.addEventListener(&apos;touchmove&apos;,function(ev){
+    ev.preventDefault();
+});    
+var box=document.getElementById(&quot;box&quot;);            
+var startDeg=0;        //上次旋转后的角度
+//两个或者两个以上手指按下        box.addEventListener(&apos;gesturestart&apos;,function(){
+    this.style.background=&apos;blue&apos;;            
+    //rotate(90deg)
+    if(this.style.transform){                startDeg=parseFloat(this.style.transform.split(&apos;(&apos;)[1]);
+    }
+});            
+//两个或者两个以上手指变换
+box.addEventListener(&apos;gesturechange&apos;,function(ev){
+    /*this.style.background=&apos;black&apos;;
+    this.innerHTML=ev.rotation;*/                
+    this.style.transform=&apos;rotate(&apos;+(ev.rotation+startDeg)+&apos;deg)&apos;;
+});            
+//两个或者两个以上手指变换            box.addEventListener(&apos;gestureend&apos;,function(){
+    this.style.background=&apos;green&apos;;
+});
+</code></pre><p><font color="e5004f" size="5"><strong>多指缩放</strong></font></p>
+<pre><code> * gesturestart                两个或者两个以上手指按下
+ * gesturechange            两个或者两个以上手指变换
+ * gestureend                两个或者两个以上手指离开
+ * 
+ * ev.rotation                这个值是start与move的旋转度数的差值
+ * ev.scale                    这个值是start与move的缩放倍数的差值
+//一定要阻止浏览器的默认行为            document.addEventListener(&apos;touchstart&apos;,function(ev){
+    ev.preventDefault();
+});            document.addEventListener(&apos;touchmove&apos;,function(ev){
+    ev.preventDefault();
+});            
+var box=document.getElementById(&quot;box&quot;);            
+var startScale=1;        //上次缩放后的角度
+//两个或者两个以上手指按下            box.addEventListener(&apos;gesturestart&apos;,function(){
+    this.style.background=&apos;blue&apos;;            
+    //rotate(90deg)
+    if(this.style.transform){                    startScale=parseFloat(this.style.transform.split(&apos;(&apos;)[1]);
+    }
+});            
+//两个或者两个以上手指变换            box.addEventListener(&apos;gesturechange&apos;,function(ev){
+    /*this.style.background=&apos;black&apos;;
+    this.innerHTML=ev.rotation;*/                
+    var sc=ev.scale*startScale;
+    sc=sc&lt;0.5?0.5:sc;                
+    this.style.transform=&apos;scale(&apos;+sc+&apos;)&apos;;
+});            
+//两个或者两个以上手指变换            box.addEventListener(&apos;gestureend&apos;,function(){
+    this.style.background=&apos;green&apos;;
+});
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/position/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/position/" itemprop="url">position(定位)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:36:38+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font color="e5004f" size="6"><strong>Position</strong></font><br>static    默认值，不定位<br>relative    相对定位<br>只加相对定位，不设置元素移动的位置(top, bottom, left, right值)，元素和之前是没有变化<br>根据自己原来的位置计算移动的位置<br>不脱离文档流，元素移走以后，原来的位置还会被保留<br>加上相对定位后对原来的元素本身的特征没有影响<br>提升层级<br>absolute    绝对定位<br>完全脱离文档流<br>行内元素支持所有样式（与加上浮动或者inline-block以后的效果是一样的）<br>如果父级有定位，那位置会根据父级移动。如果父级没有定位，那位置根据可视区移动。(一般情况下，要用到绝对定位的时候，都会给父级来一个相对定位, 子元素绝对定位, 父元素相对定位)<br>提升层级<br>触发BFC<br>fixed    固定定位<br>完全脱离文档流<br>行内元素支持所有样式（与加上浮动或者inline-block以后的效果是一样的）<br>相对可视区来移动位置<br>提升层级<br>触发BFC<br>IE6不支持</p>
+<p><font color="e5004f" size="6"><strong>z-index</strong></font><br>在正常情况下，层级的大小由顺序决定，后面的元素要比前面的元素的层级要高<br>有定位元素的层级要比没有定位元素层级要高<br>在都有定位的情况下，层级还是取决于书写顺序<br>z-index    层级，它的值是一个数字，数字越大层级越高（在同一个层里）<br>IE6不支持</p>
+<p><font color="e5004f" size="6"><strong>居中</strong></font><br>需要注意的是, 以下例子中parent的宽高, 可以通过上下文确定或者手动指定。</p>
+<p>水平居中<br>margin: 0 auto</p>
+<p>用在子元素上的<br>如果它是行内元素, 需要把它转成块元素display:block(行内元素没margin效果)<br>text-align: center</p>
+<p>用在父元素上的<br>子元素不能是行内元素, 需要是块元素或行内块元素。<br>水平垂直居中<br>经典方法, 绝对定位加上子元素的宽高一半的负边距。</p>
+<p>用在子元素上的<br>需要知道子元素的宽高</p>
+<p>.parent{<br>    position: relative;<br>}</p>
+<p>.children{<br>    position: absolute;<br>    width: 100px;<br>    height: 150px;<br>    top: 50%;<br>    width: 50%;<br>    margin-top: -75px; /<em> 高的一半 </em>/<br>    margin-left: -50px; /<em> 宽的一半 </em>/<br>}<br>经典方法: margin: auto</p>
+<p>用在子元素上的<br>不用受子元素宽高限制</p>
+<p>.parent{<br>        position: relative;<br>    }</p>
+<p> .children{<br>        position: absolute;<br>        top: 0;<br>        right: 0;<br>        left: 0;<br>        bottom: 0;<br>        margin: auto;<br>    }</p>
+<p>绝对定位和transform</p>
+<p>用在子元素上的<br>使用了transform方法, 如果支持CSS3的话, 在性能上有优势。</p>
+<p>   .parent{<br>        position: relative;<br>    }</p>
+<p> .children{<br>        position: absolute;<br>        width: 100px;<br>        height: 150px;<br>        top: 50%;<br>        left: 50%;<br>        transform: translate(-50%, -50%);<br>    }</p>
+<p>display: table-cell</p>
+<p>用在父元素上的<br>让父元素变成表格, 再用表格的样式居中。</p>
+<p> .parent{<br>        display: table-cell;<br>        vertical-align: middle;<br>        text-align: center;<br>        width: 300px;<br>        height: 300px;<br>    }</p>
+<p> .children{</p>
+<p> width: 100px;<br>        height: 150px;<br>    }</p>
+<p>CSS3新特性 flexbox</p>
+<p>用在父元素身上<br>PC有兼容问题, 移动端完美<br>未来的方法<br>.parent{<br>        display: flex;<br>        justify-content: center;<br>        align-items: center;<br>        width: 300px;<br>        height: 300px;<br>    }</p>
+<p>.children{<br>        width: 100px;<br>        height: 150px;<br>    }</p>
+<p>利用vertical-align: middle</p>
+<p>需要有一个块参照元素(如下面的.refer)<br>父元素需要使用font-size: 0消去子元素间产生的间隙<br>子元素宽高不需要确定<br>        .parent{<br>            text-align:center;<br>            font-size: 0;<br>        }</p>
+<p> .refer{<br>            width: 0;<br>            height: 100%;<br>            vertical-align: middle;<br>            display: inline-block;<br>        }</p>
+<p> .children{<br>            display: inline-block;<br>            vertical-align: middle;<br>            font-size: 14px;<br>            text-align: left;<br>        }</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=“refer”&gt;&lt;/div&gt;
+    &lt;div class=“children”&gt;需要内容撑开&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/date-object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/date-object/" itemprop="url">Date object</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:35:37+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font color="e5004f" size="6"><strong>获取日期</strong></font><br>new Date()<br>日期对象.getFullYear()    获取年<br>日期对象.getMonth()    获取月，月份是从0开始的<br>日期对象.getDate()    获取日<br>日期对象.getDay()    获取星期，从0开始，0代表周日<br>日期对象.getHours()    获取小时<br>日期对象.getMinutes()    获取分钟<br>日期对象.getSeconds()    获取秒钟<br>日期对象.getMilliseconds()    获取毫秒<br>日期对象.getTime()    获取1970-01-01 00:00:00到目前日期对象的时间差（单位:毫秒）</p>
+<p><font color="e5004f" size="6"><strong>设置日期</strong></font><br>日期对象.setFullYear()    设置年<br>日期对象.setMonth()    设置月(月份从0开始计算)<br>日期对象.setDate() 设置日<br>日期对象.setDate(0) 日期0号, 也就是上个月最后一天<br>日期对象.setHours() 设置小时<br>日期对象.setMinutes() 设置分钟<br>日期对象.setSeconds() 设置秒钟<br>日期对象.setMilliseconds() 设置毫秒<br>日期对象.setTime()    设置时间戳</p>
+<p><font color="e5004f" size="6"><strong>例子</strong></font><br>// TODOS<br>这个月的天数<br>今天是本年度第几周<br>历史上的今天是星期几<br>倒计时/秒表<br>日历</p>
+<p><font color="e5004f" size="5"><strong>定时器</strong></font><br>1、重复执行定时器<br>setInterval(function(){<br>                    每隔一段时间就会执行这里的代码        },时间)<br>setInterval(change,1000);<br>function change(){<br>                    i++;<br>                }<br>2、延迟执行定时器<br>setTimeou(function(){<br>当时间到达后，会执行这里的代码    },时间);<br>setTimeout(change,1000)<br>3.定时器里的this是指向window的，因为定时器是window身上的一个方法，所以this指向window<br>4.清除定时器<br>var timer1=setInterval(add,1000);<br>                var timer2=setTimeout(cut,3000);<br>                clearTimeout(timer1);<br>                clearInterval(timer2);<br>                5</p>
+<p><font color="e5004f" size="5"><strong>Math对象</strong></font><br>1.Math.ceil()<br>    作用：把一个数向上取整<br>    语法：    Mathi.ceil(数字)<br>    参数：就是一个数字<br>    返回值：返回参数向上取整后的结果<br>    console.log(Math.ceil(0.1));        //1<br>            console.log(Math.ceil(-10.8));    //-10<br>            console.log(Math.ceil(10));        //10<br>            2.Math.floor()<br>            作用：把一个数向下取整<br>    语法：    Mathi.floor(数字)<br>    参数：就是一个数字<br>    返回值：返回参数向下取整后的结果<br>    console.log(Math.floor(0.1));        //0<br>            console.log(Math.floor(-10.8));        //-11<br>            console.log(Math.floor(10));            //10<br>            3.Math.round()<br>            作用：把一个数字四舍五入<br>    语法：    Math.round(数字)<br>    参数：就是一个数字<br>    返回值：返回参数四舍五入后的结果<br>    console.log(Math.round(3.15));    //3<br>            console.log(Math.round(4.5));    //5<br>            console.log(Math.round(-10.87));    //-11<br>            4.Math.abs()<br>            作用：把一个数向上取整<br>    语法：    Math.abs(数字)<br>    参数：就是一个数字<br>    返回值：返回参数取绝对值后的结果<br>    console.log(Math.abs(10));        //10<br>            console.log(Math.abs(-11));        //11<br>            5.Math.random()<br>            作用：取0-1之间的随机数，包含0但是不包含1<br>    语法：    Math.random()<br>    参数：就是一个数字<br>    返回值：返回参数向上取整后的结果<br>    常用的一些随机取值方法<br>        x ~ y : Math.round(Math.random()<em>(y-x) + x)<br>                0 ~ x : Math.round(Math.random()</em>x)<br>                1 ~ x : Math.ceil(Math.random()<em>x)||1<br>                0 ~ x-1 : Math.floor(Math.random()</em>x)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/event/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/event/" itemprop="url">event</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:34:24+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <font color="e5004f" size="6"><strong>常见事件</strong></font><br>鼠标事件: onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmouseout, onmouseenter, onmouseleave<br>鼠标位置信息: event.clientX, event.clientY;<br>焦点事件: onfocus, onblur<br>select: 在表单元素中选中用户输入的内容<br>键盘事件 event.keyCode, event.ctrlKey, event.shiftKey, event.altKey<br><br><font color="e5004f" size="6"><strong>事件对象</strong></font><br>chrom/ie, event是window身上的对象，直接用,FF中事件对象必需是第一个参数。<br><br><font color="e5004f" size="6"><strong>事件流</strong></font><br>事件触发的流程 - 捕获阶段(从外向里) -&gt; 目标阶段 -&gt; 冒泡阶段(从里向外)。 - 所遇到的每个元素如果有相同的事件处理函数都会被触发。 - 低版本IE浏览器只绑定到冒泡阶段。 - 使用阻止冒泡方式可以让事件寻找停在阻止的位置。 - 目标阶段函数的执行顺序: 按照目标元素事件的书写顺序。<br><br><font color="e5004f" size="6"><strong>浏览器默认行为</strong></font><br>并非JS添加的行为, 浏览器自带。<br><br><font color="e5004f" size="6"><strong>事件绑定的两种方法</strong></font><br>对象.on事件名称＝函数;    注意：on只能给元素添加一个事件。如果说有多个on，那后面的会把前面的给覆盖了<br><br>移除事件: on事件 = null<br><br>阻止事件冒泡 event.cancelBubble = true<br><br>阻止浏览器默认行为 return false<br><br><font color="e5004f" size="6"><strong>addEventListener</strong></font>
+
+<p>参数1: 事件名称, 不带on的字符串</p>
+<p>参数2: 事件绑定函数, 匿名或者命名都行, 函数中的this指向事件。</p>
+<p>参数3: 布尔值, true表示捕获阶段发生事件, false表示在冒泡阶段发生。</p>
+<p>对象.removeEventListener(事件名称,事件绑定函数,boolean);</p>
+<p>不能移除掉匿名函数<br>只能移除同一阶段的绑定函数<br>阻止事件冒泡 event.stopPropagation()</p>
+<p>阻止浏览器默认行为 event.preventDefault()</p>
+<p><font color="e5004f" size="6"><strong>事件代理 target</strong></font><br>事件源的元素event.target, DOM节点多的时候的常用优化是给父节点绑定事件, 然后用事件代理操作(非常重要)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/Array-and-string/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/Array-and-string/" itemprop="url">Array and String</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:33:42+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font color="e5004f" size="6"><strong>数组操作</strong></font><br>添加数组的方法</p>
+<p>push    往数组的后面添加数据<br>unshift    往数组的前面添加数据<br>删除数组的方法</p>
+<p>pop    把数组的最后一位删除<br>shift    把数组的第一位删除<br>遍历数组 array.forEach(function(elem, index, array){})</p>
+<p>数组排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">       return   a-b  从小到大</span><br><span class="line">       //   return   b-a   从大到小</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>随机排序<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	return 0.5-Math.random();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<pre><code>concat ：连接数据 
+ reverse ：颠倒数组
+</code></pre><p>array.join(separator):如果是个空字符串直接连接, 默认逗号<br>array.slice(start, end), 没有参数返回本身</p>
+<p>array.splice(start,end,内容), 有第三个参数就把找到的内容替换成第三个参数</p>
+<p><font color="e5004f" size="6"><strong>字符串方法</strong></font><br>charAt ：    通过索引找字符<br>indexOf ： 通过字符找下标<br>slice<br>split<br>substring：字符串.substring(indexStart,indexEnd)<br>slice<br>substr 指定长度和开始<br>toLowerCase<br>toUpperCase<br>trim 去掉首尾空格</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/url/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/url/" itemprop="url">url</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:32:20+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <font color="blue" size="5"><strong>从输入URL到页面加载发生了什么</strong></font>
+
+<ol>
+<li>DNS解析</li>
+<li>TCP连接</li>
+<li>发送HTTP请求</li>
+<li>服务器处理请求并返回HTTP报文</li>
+<li>浏览器解析渲染页面</li>
+<li>连接结束</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/ajax/" itemprop="url">Ajax</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:30:14+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font color="e5004f" size="5"><strong>Ajax</strong></font><br> Ajax是一种技术方案，但并不是一种新技术。它依赖的是现有的CSS/HTML/Javascript，而其中最核心的依赖是浏览器提供的XMLHttpRequest对象，是这个对象使得浏览器可以发出HTTP请求与接收HTTP响应。<br>1.ajax:Asynchronous JavaScript and XML(异步js和XML)<br>2.异步js：js的代码都是至到而下执行的，如果一块代码没有执行完毕，那后面的代码就不会执行。异步就是ajax可以做到不按顺序执行<br>3.XML：存储数据的一种格式<br>ajax不光能够处理XML格式的数据，还可以处理json、数组、字符串类型的数据<br>4.ajax到底能干嘛<br>js与后端进行数据交互的一种技术，通过请求协商好的接口，来获取到想要的数据<br>5.优点<br>传输数据时候会在本页面请求服务器，不用跳转页面，从而减轻服务器压力。做到实时验证，减少用户返工率并且优化用户体验</p>
+<p>ajax是基于http（https）协议，所以只能在HTTP服务器环境下运行。之前我们打开页面是在本地打开，走的是file协议。<br>本地安装服务器环境用wampserver<br>1、如果你的电脑是64位的话，安装的是32位的软件的话会有问题，提示“无法启动此程序，因为计算机中丢失MSVCR110.dll”。所以一定要安装64位的wampserver<br>2、打开wampserver前最好把所有的软件都关掉，特别是下载、视频播放软件<br>3、www目录下的文件夹不能以中文命名，但是文件里面的html文件可以用中文命名</p>
+<p><font color="e5004f" size="5"><strong>ajax数据交互流程</strong></font><br><strong>ajax数据交互流程</strong><br>1、创建一个ajax对象            买了一个电话<br>2、填写请求地址                输入号码<br>3、发送请求                    拨号<br>4、等待服务器响应                等待<br>5、接收数据                    通话<br>//1、创建一个ajax对象<br>var ajax=null;<br>            if(window.XMLHttpRequest){<br>                ajax=new XMLHttpRequest;<br>            }else{<br>                ajax=new ActiveXObject(‘Microsoft.XMLHTTP’);<br>            }<br>                    //2、填写请求地址<br>                    ajax.open(‘get’,’php/get.php?user=’+val,true);<br>                    //3、发送请求<br>                    ajax.send();<br>                    //4、等待服务器响应<br>                    ajax.onload=function(){<br>                        //5、接收数据<br>                        var span=document.querySelector(“span”);<br>                        span.innerHTML=ajax.responseText;<br>                    };<br>                    <strong>get方式与post方式的区别</strong><br>                    get方式<br>                1、通过地址栏信息进行数据传输，传输的大小有限制<br>                2、不安全，用户的所有信息都会暴露出来<br>                3、拼接数据的时候要用encodeURI转一下码，不然有中文就会乱码<br>                4、不用设置请求头<br>                5、数据拼接在open方法里<br>                6、会有缓存问题<br>                post方式<br>                1、通过send向服务器传输数据，理论上来说是没有长度或体积限制<br>                2、相对来说安全，因为不直接暴露用户信息<br>                3、不用转码，已经通过请求头设置了数据格式，不会有乱码<br>                4、在send()的前面需要设置一个请求头（不设置要出错）<br>                    ajax.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);<br>                5、数据要拼接在send方法里<br>                6、没有缓存问题<br>                <strong>post提交：</strong><br>                var ajax=null;<br>                    if(window.XMLHttpRequest){<br>                        ajax=new XMLHttpRequest;<br>                    }else{<br>                        ajax=new ActiveXObject(‘Microsoft.XMLHTTP’);<br>                    }<br>                        ajax.open(‘post’,’php/post.php’,true);<br>                    //post发送请求的时候一定要在发送前设置一下请求头<br>                    ajax.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);<br>                    ajax.send(‘user=’+val);<br>                    //4、等待服务器响应<br>                    ajax.onreadystatechange=function(){<br>                        //5、接收数据<br>                        var span=document.getElementsByTagName(“span”)[0];<br>                        span.innerHTML=ajax.responseText;<br>                    };<br>                    <strong>同步与异步：</strong><br>                    执行的一种模式<br>        同步<br>             1、当send()方法调用后会等待服务器返回信息，如果服务器一直没有响应，就会阻塞后面的代码，后面的代码就不会执行<br>            2、后面的代码执行受前面代码的影响，前面的代码没跑通，后面的代码就不会执行<br>    异步<br>1、当send()方法调用后，就会执行后面的代码，不用等待服务器的响应<br>2、后面的代码执行不受前面代码的影响<br><strong>onreadystatechange与onload事件：</strong><br>ajax.readyState        AJAX运行步骤(第一步捕捉不到)</p>
+<pre><code> *     它的值为4的话说明AJAX已经运行完成
+ *         0    初始化            还没有调用open()方法
+ *        1    载入            已调用send()方法，正在发送请求
+ *        2    载入完成        send()方法完成，已收到全部响应内容
+ *        3    解析            正在解析响应内容
+ *        4    完成            响应内容解析完成，可以在客户端调用了
+ * ajax.status            服务器对请求的反馈(状态码)
+ *         200就是成功的，404就是错误的
+ * onreadystatechange        
+readyState的值发生改变时触发的事件，只要这个值有变化就会触发
+ * onload
+ 所有请求成功完成后触发，此时readystate的值为4
+ （新的XMLHttpRequest不推荐用onreadystatechange，使用onload）
+**ajax上传功能：**
+上传只能用post的方式，并且后台需要处理中文
+ * ajax.upload.onprogress        上传的进度事件
+ *     ev.loaded    已经上传文件的大小
+ *     ev.total    总文件的大小
+ * FormData        用来创建与表单格式相同的数据，它是由XMLHttpRequest 2级定义。获取到的是一个二进制数据
+ *     FormData.append(文件名,文件值)
+ * files        上传选中的所有文件列表，放在type为file的表单控件中
+ *     这里包括：最后修改的时间、大小、类型等等
+</code></pre><p>var ajax=new XMLHttpRequest();                ajax.open(‘post’,’php/post_file.php’,true);<br>                    ajax.upload.onprogress=function(ev){<br>                        progress.value=ev.loaded/ev.total*100;<br>                    };<br>        //console.log(inputs[0].files);<br>                    var formadata=new FormData();<br>                    for(var i=0;i&lt;inputs[0].files.length;i++){<br>                        formadata.append(‘file’,inputs[0].files[i]);<br>                    }            ajax.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);<br>                    ajax.send(formadata);<br>                    ajax.onload=function(){<br>                    };<br><strong>跨域</strong><br>                 两个不同域名下的数据进行交互。Ajax之所以不能跨域其实是因为XMLHttpRequest受到同源策略的限制，只能让它访问同源下的数据，不能访问不同源下的数据</p>
+<pre><code>* 同源策略
+*     每个网站只能读取同一来源的数据，这里的同一来源指的是主机名(域名)、协议(http/https)和端口号的组合。在没明确授权的情况下，不能读写对方的资源，它是浏览器最核心也最基本的安全功能
+*     源：协议、端口、域名
+只要不同源就跨域
+* 协议
+*     http    超文本协议
+*    https    HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议要比http协议安全
+*    file    本地协议
+*     ftp        文件共享协议
+* 端口： 相当于酒店里一层的房间
+</code></pre><p><strong>jsonp</strong><br>带src属性的script,img,iframe,link等标签是不需要遵守同源策略的，但是通过src加载的资源，浏览器限制了javascript的权限，只能读不能写<br>              jsonp(json+padding)<br>                 1、通过script标签引入某些数据，是同步模式的，只有上面的代码加载完成才能继续加载下面的代码一般在用script标签做跨域的时候，不建议将数据提前加载，应该按需加载<br>             2、当需要数据的时候创建一个script标签，将需要的数据放在src中，通过onload去监听是否请求过来，请求完毕就调用传回来的数据（异步加载）<br>             3、jsonp不能用post请求只能用get方式请求<br>             <strong>jsonp的回调函数</strong></p>
+<pre><code> *     1、通过jsonp的方式的数据一般都会放在一个回调函数里
+ *     2、请求到的结果是这样的getData({&quot;color&quot;:[&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;]})
+ *         1、数据放在函数的参数里，可以是任何数据形式(对象、数组)
+ *         2、回调函数的名字要么是后端定死的，要么是我们在请求地址跟动态加上的
+ *             http://localhost/ajax/php/3.php?callBack=getData
+ *     注意：
+ *         1、如果是直接在页面里用script标签引入数据的话，那定义回调函数一定要放在引入数据的前面
+ *         2、如果是通过动态创建script标签的话定义回调函数一定要是全局的，或者挂载到window身上
+ *     原因：
+ *         1、创建的script标签是在全局下，如果函数没在全局下肯定找不到
+ *         2、数据中返回的数据一加载到页面里是调用函数，那调用函数前必需要定义函数
+//1、回调函数作为全局函数，在window.onload外面声明就是一个全局函数
+function getData(data){
+    alert(data);
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    <div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://watermelonluo.github.io/2018/04/17/function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="watermelonluo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="watermelon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/function/" itemprop="url">函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T20:26:19+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font color="e5004f" size="5"><strong>作用域</strong></font><br>作用域是一种规则，在代码编译阶段就确定了，规定了变量与函数的可被访问的范围。全局变量拥有全局作用域，局部变量则拥有局部作用域。 js是一种没有块级作用域的语言(包括if、for等语句的花括号代码块或者单独的花括号代码块都不能形成一个局部作用域)，所以js的局部作用域的形成有且只有函数的花括号内定义的代码块形成的，既函数作用域。</p>
+<p><font color="e5004f" size="5"><strong>作用域链</strong></font><br>作用域链是一个只能单向访问的链表，这个链表上的每个节点就是执行上下文的变量对象(代码执行时就是活动对象)，单向链表的头部(可被第一个访问的节点)始终都是当前正在被调用执行的函数的变量对象(活动对象)，尾部始终是全局活动对象<br>作用域链的形成<br>function fun01 () {<br>    console.log(‘i am fun01…’);<br>    fun02();<br>}</p>
+<p>function fun02 () {<br>    console.log(‘i am fun02…’);<br>}</p>
+<p>fun01();<br>因为如果在当前节点没有找到变量，就跳到下一个节点查找，还要进行判断下一个节点中是否存在被查找变量。“查找距离”越长，要做的“跳”动作和“判断”动作也就越多，资源开销就越大，从而影响性能</p>
+<p><font color="e5004f" size="5"><strong>关于闭包</strong></font><br>函数对象可以通过作用域链相互关联起来，函数体内的数据(变量和函数声明)都可以保存在函数作用域内，这种特性在计算机科学文献中被称为“闭包”。既函数体内的数据被隐藏于作用于链内，看起来像是函数将数据“包裹”了起来。从技术角度来说，js的函数都是闭包：函数都是对象，都关联到作用域链，函数内数据都被保存在函数作用域内。<br>//闭包实例<br>function outerFun () {<br>    var outerV1 = 10<br>    function outerF1 () {<br>        console.log(‘I am outerF1…’)<br>    }<br>function innerFun () {<br>        var innerV1 = outerV1<br>        outerF1()<br>    }<br>    return innerFun   //return回innerFun()内部函数<br>}<br>var fn = outerFun()        //接到return回的innerFun()函数<br>fn()                    //执行接到的内部函数innerFun()</p>
+<p><font color="e5004f" size="5"><strong>闭包的好处及使用场景</strong></font><br>如果当前执行上下文执行完毕，且上下文内的数据没有其他引用，则执行上下文pop出call stack，其内数据等待被垃圾回收。而当我们在其他执行上下文通过闭包对执行完的上下文内数据仍然进行引用时，那么被引用的数据则不会被垃圾回收。<br>(1)进行变量持久化。<br>(2)使函数对象内有更好的封装性，内部数据私有化。</p>
+<p><font color="e5004f" size="5"><strong>JS中this的四种用法</strong></font><br>1.在一般函数方法中使用 this 指代全局对象<br>            function test(){<br>            　　this.x = 1;<br>            　　alert(this.x);<br>            }<br>            test(); // 1<br>2.作为对象方法调用，this 指代上级对象<br>function test(){<br>　　alert(this.x);<br>}<br>var o = {};<br>o.x = 1;<br>o.m = test;<br>o.m(); // 1<br>3.作为构造函数调用，this 指代new 出的对象<br>function test(){<br>　　　　this.x = 1;<br>　　}<br>　　var o = new test();<br>　　alert(o.x); // 1<br>    //运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：<br>　　var x = 2;<br>　　function test(){<br>　　　　this.x = 1;<br>　　}<br>　　var o = new test();<br>　　alert(x); //2<br>　　4.apply 调用 ，apply方法作用是改变函数的调用对象，此方法的第一个参数为改变后调用这个函数的对象，this指代第一个参数<br>　　var x = 0;<br>　　function test(){<br>　　　　alert(this.x);<br>　　}<br>　　var o={};<br>　　o.x = 1;<br>　　o.m = test;<br>　　o.m.apply(); //0<br>//apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。如果把最后一行代码修改为</p>
+<p>　　o.m.apply(o); //1</p>
+<p><font color="e5004f" size="5"><strong>函数定义</strong></font><br>1.函数声明<br>使用function关键字，后跟一组参数以及函数体<br>function funcname([arg1 [,arg2 […,argn]]]){<br>    statement;<br>}<br>函数声明提升，函数名称和函数体都提升：<br>foo();<br>function foo(){<br>    console.log(1);//1<br>}<br>变量的重复声明是无用的，但函数的重复声明会覆盖前面的声明(无论是变量还是函数声明)<br>//变量的重复声明无用<br>var a = 1;<br>var a;<br>console.log(a);//1<br>//由于函数声明提升优先于变量声明提升，所以变量的声明无作用<br>var a;<br>function a(){<br>    console.log(1);<br>}<br>a();//1<br>//后面的函数声明会覆盖前面的函数声明<br>a();//2<br>function a(){<br>    console.log(1);<br>}<br>function a(){<br>    console.log(2);<br>}<br>和变量声明一样，函数声明语句创建的变量无法删除<br>function foo(){<br>    console.log(1);<br>}<br>delete foo;//false<br>console.log(foo());//1<br>2.函数定义表达式<br>以表达式方式定义的函数，函数的名称是可选的，函数定义表达式特别适合用来定义那些只会使用一次的函数<br>var functionName = function([arg1 [,arg2 […,argn]]]){<br>    statement;<br>}<br>3.Function构造函数<br>Function构造函数接收任意数量的参数，但最后一个参数始终都被看成是函数体，而前面的参数则枚举出了新函数的参数<br>var functionName = new Function([‘arg1’ [,’arg2’ […,’argn’]]],’statement;’);<br>Function构造函数无法指定函数名称，它创建的是一个匿名函数<br>并不是所有的函数都可以成为构造函数<br>var o = new Math.min();//Uncaught TypeError: Math.min is not a constructor</p>
+<p><font color="e5004f" size="5"><strong>函数返回值</strong></font><br>函数中的return语句用来返回函数调用后的返回值<br>return语句只能出现在函数体内，如果不是会报语法错误<br>如果没有return语句，则函数调用仅仅依次执行函数体内的每一条语句直到函数结束，最后返回调用程序。这种情况下，调用表达式的结果是undefined<br>var test = function fn(){}<br>console.log(test());//undefined<br>当执行到return语句时，函数终止执行，并返回expression的值给调用程序<br>var test = function fn(){<br>    return 2;<br>};<br>console.log(test());//2<br>由于javascript可以自动插入分号，因此在return关键字和它后面的表达式之间不能有换行<br>var test = function fn(){<br>    return<br>    2;<br>};<br>console.log(test());//undefined<br>一个函数中可以有多个return语句<br>function diff(iNum1, iNum2) {<br>  if (iNum1 &gt; iNum2) {<br>    return iNum1 - iNum2;<br>  } else {<br>    return iNum2 - iNum1;<br>  }<br>}</p>
 
           
         
@@ -362,6 +1690,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -396,9 +1728,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar1.jpg"
-                alt="John Doe" />
+                alt="watermelonluo" />
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">watermelonluo</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -409,7 +1741,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -417,6 +1749,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -455,7 +1796,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">watermelonluo</span>
 
   
 </div>
